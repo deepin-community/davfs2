@@ -1,0 +1,206 @@
+# Czech translation of davfs2 debconf messages.
+# Copyright (C) 2007 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the davfs2 package.
+# Miroslav Kure <kurem@debian.cz>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.2.0-1\n"
+"Report-Msgid-Bugs-To: luciano@debian.org\n"
+"POT-Creation-Date: 2008-04-11 20:26-0300\n"
+"PO-Revision-Date: 2007-06-07 16:24+0200\n"
+"Last-Translator: Viktor Matys <v.matys@seznam.cz>\n"
+"Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid "Should unprivileged users be allowed to mount WebDAV resources?"
+msgstr "Povolit neprivilegovaným uživatelům mountovat zdroje WebDAV?"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid ""
+"The file /sbin/mount.davfs must have the SUID bit set if you want to allow "
+"unprivileged (non-root) users to mount WebDAV resources."
+msgstr ""
+"Chcete-li povolit připojování webdav zdrojů i běžným uživatelům, musí mít "
+"soubor /sbin/mount.davfs nastavený SUID bit."
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid ""
+"If you do not choose this option, only root will be allowed to mount WebDAV "
+"resources. This can later be changed by running 'dpkg-reconfigure davfs2'."
+msgstr ""
+"Pokud tuto možnost nevyberete, bude pouze rootovi povoleno mountovatzdroje "
+"WebDAV. Později to může být změněno spuštěním 'dpkg-reconfigure·davfs2'."
+
+#. Type: string
+#. Description
+#: ../templates:3001
+msgid "User running the mount.davfs daemon:"
+msgstr "Uživatel pod kterým běží démon mount.davfs:"
+
+#. Type: string
+#. Description
+#: ../templates:3001
+msgid ""
+"Once the davfs resource has been mounted, the daemon will drop the root "
+"privileges and will run with an unprivileged user ID."
+msgstr ""
+"Jakmile je zdroj davfs namountován, shodí démon rootovská privilegiaa běží "
+"pod neprivilegovaným uživatelským ID."
+
+#. Type: string
+#. Description
+#: ../templates:3001
+msgid "Please choose which login name should be used by the daemon."
+msgstr "Vyberte prosím přihlašovací jméno, které má být démonem používáno."
+
+#. Type: string
+#. Description
+#: ../templates:4001
+msgid "Group for users who will be allowed to mount WebDAV resources:"
+msgstr ""
+"Skupina pro uživatele, kteří budou mít dovoleno mountovat zdroje WebDAV."
+
+#. Type: string
+#. Description
+#: ../templates:4001
+msgid ""
+"Mounting WebDAV resources creates a file in /var/run/mount.davfs. This "
+"directory will be owned by the group specified here."
+msgstr ""
+"Mountování zdrojů WebDAV vytváří soubor ve /var/run/mount.davfs.Tento "
+"adresář bude vlastněný zde zadanou skupinou."
+
+#. Type: boolean
+#. Description
+#: ../templates:5001
+msgid "Do you want to create a new user?"
+msgstr "Chcete vytvořit nového uživatele?"
+
+#. Type: boolean
+#. Description
+#: ../templates:5001
+msgid ""
+"The \"${user_name}\" user does not exist on the system and will be created "
+"if you choose this option."
+msgstr ""
+"Uživatel \"${user_name}\" v systému neexistuje. Odpovíte-li kladně, bude "
+"vytvořen."
+
+#. Type: boolean
+#. Description
+#: ../templates:6001
+msgid "Do you want to create a new group?"
+msgstr "Chcete vytvořit tuto novou skupinu?"
+
+#. Type: boolean
+#. Description
+#: ../templates:6001
+msgid ""
+"The \"${group_name}\" group does not exist on the system and will be created "
+"if you choose this option."
+msgstr ""
+"Skupina \"${group_name}\" v systému neexistuje. Odpovíte-li kladně, bude "
+"vytvořena."
+
+#. Type: note
+#. Description
+#: ../templates:7001
+msgid "Unprivileged users allowed to mount WebDAV resources"
+msgstr "Neprivilegovaní uživatelé, kteří mají povoleno mountovat zdroje WebDAV"
+
+#. Type: note
+#. Description
+#: ../templates:7001
+msgid ""
+"The \"${group_name}\" group and the \"${user_name}\" user will be used by "
+"davfs2. All users who should be granted the right to mount WebDAV resources "
+"should be added to the group \"${group_name}\" using the following command:"
+msgstr ""
+"Davfs2 bude používat skupinu \"${group_name}\"·a uživatele·\"${user_name}\"."
+"Všichni uživatelé, kterým má být zaručeno právo mountovat zdroje WebDAVby "
+"měli být přidáni do skupiny \"${group_name}\" pomocí tohoto příkazu:"
+
+#. Type: note
+#. Description
+#: ../templates:7001
+msgid "The following should also be added to /etc/fstab:"
+msgstr "Následující by mělo být rovněž přidáno do /etc/fstab:"
+
+#. Type: note
+#. Description
+#: ../templates:7001
+msgid ""
+"Additional options are available. Please read the mount.davfs man page for "
+"more information."
+msgstr ""
+"Dodatečné volby jsou možné. Nahlédněte, prosím, do manuálové stránkymount."
+"davfs pro další informace."
+
+#~ msgid ""
+#~ "Choosing this option is discouraged for security reasons. If you choose "
+#~ "it, additional input will be required."
+#~ msgstr ""
+#~ "Tato volba není doporučována z bezpečnostních důvodů. Vyberete-li ji,bude "
+#~ "vyžadován dodatečný vstup."
+
+#~ msgid "Files with SUID root are normally avoided."
+#~ msgstr "Soubory se SUID root by se měly používat co nejméně."
+
+#~ msgid ""
+#~ "If you answer confirmative to this question, more details will be "
+#~ "required.  Otherwise, non-root users can not mount webdav resources."
+#~ msgstr ""
+#~ "OdpovÃte-li kladnÄ, budete dotÃzÃni jeÅtÄ na upÅesÅujÃcÃ podrobnosti. V "
+#~ "opaÄnÃm pÅÃpadÄ nebudou moci bÄÅnÃ uÅivatelÃ pÅipojovat webdav zdroje."
+
+#~ msgid "You can always change your opinion with \"dpkg-reconfigure davfs2\""
+#~ msgstr ""
+#~ "SvÅj nÃzor mÅÅete kdykoliv zmÄnit pÅÃkazem \"dpkg-reconfigure davfs2\""
+
+#~ msgid "The non-root users of davfs2 must be part of this group:"
+#~ msgstr "BÄÅnÃ uÅivatelÃ davfs2 (ne root) musÃ bÃt patÅit do tÃto skupiny:"
+
+#~ msgid ""
+#~ "For creating a file in /var/run/mount.davfs you must provide a group to "
+#~ "own this directory. If you give a non-existant group, it will be created "
+#~ "for you."
+#~ msgstr ""
+#~ "Abyste mohli vytvÃÅet soubory ve /var/run/mount.davfs musÃte zadat "
+#~ "skupinu, kterÃ bude tento adresÃÅ vlastnit. ZadÃte-li neexistujÃcÃ "
+#~ "skupinu, bude automaticky vytvoÅena."
+
+#, fuzzy
+#~ msgid ""
+#~ "The group \"${group_name}\" and the user \"${user_name}\" will be used by "
+#~ "davfs2. You must add to this group all your users that you want to grant "
+#~ "access. Like this:"
+#~ msgstr ""
+#~ "davfs2 bude pouÅÃvat skupinu \"${group_name}\". Do tÃto skupiny musÃte "
+#~ "pÅidat vÅechny uÅivatele, kterÃm chcete povolit pÅÃstup. NezapomeÅte do "
+#~ "souboru /etc/fstab pÅidat ÅÃdku podobnou tÃto:"
+
+#~ msgid "https://webdav.site.com/path  /mnt  davfs  rw,users,noauto  0  0"
+#~ msgstr "https://webdav.site.cz/cesta  /mnt  davfs  rw,users,noauto  0  0"
+
+#~ msgid ""
+#~ "Please, note that you should use http if your server doesn't support "
+#~ "https connections. The mount point, the name of the server and the path "
+#~ "must be adapted to your requirements."
+#~ msgstr ""
+#~ "Poznamenejme, Åe pokud vÃÅ server nepodporuje protokol https, mÄli byste "
+#~ "pouÅÃt http. PÅÃpojnÃ bod, jmÃno serveru a cestu si musÃte pÅizpÅsobit "
+#~ "dle vaÅÃ konkrÃtnÃ situace."
+
+#~ msgid "Do you want /sbin/mount.davfs to be installed SUID root?"
+#~ msgstr "PÅejete si nainstalovat /sbin/mount.davfs jako SUID root?"

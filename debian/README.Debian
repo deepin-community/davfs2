@@ -1,0 +1,33 @@
+davfs2 for Debian
+------------------
+
+Allowing a normal user to mount webdav resources
+------------------------------------------------
+If you want to allow non-root users to mount a davfs file system, you have to
+set a few things. You can run dpkg-reconfigure davfs2 to do that in a 
+user-friendly way.
+
+Changing the default permissions 
+--------------------------------
+Davsf2 use dpkg-statoverride(8) to manage the files' permissions. If you want 
+to change this privileges don't use chmod or chown. Please use 
+dpkg-statoverride(8). More info will in dpkg-statoverride manpage.
+
+Mount a FS automatically on system startup
+------------------------------------------
+Setting option '_netdev' in /etc/fstab should do the trick.
+
+Please be aware that automatically unmounting a davfs2 file system at shutdown
+is not always safe. If there are a lot of data in the cache that have not yet
+been synchronized with the server davfs2 will try to synchronize when being
+unmounted. This may take a long time and davfs2 may be killed by the shutdown
+process leaving the cache in an inconsistent state and cause data loss. So if 
+you are not sure that davfs2 had time enough to write all new and changed 
+files to the server I would advice to manually unmount davfs2 file systems.
+
+Be also sure to have configured the file system in /etc/davfs2/davfs2.conf and
+/etc/davfs2/secrets so that mounting during boot will not hang or require user
+input.
+
+
+ -- Luciano Bello <luciano@debian.org>  Sat, 14 Jul 2012 05:52:33 +0200

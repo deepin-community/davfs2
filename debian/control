@@ -1,15 +1,30 @@
-Source: template-repository
-Section: unknown
+Source: davfs2
+Section: utils
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Aymeric Agon-Rambosson <aymeric.agon@yandex.com>
+Build-Depends: debhelper-compat (= 13), po-debconf, libneon27-dev
+Standards-Version: 4.7.0
+Rules-Requires-Root: no
+Vcs-Git: https://salsa.debian.org/debian/davfs2.git
+Vcs-Browser: https://salsa.debian.org/debian/davfs2
+Homepage: https://github.com/alisarctl/davfs2
 
-Package: template-repository
+Package: davfs2
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser
+Description: mount a WebDAV resource as a regular file system
+ Web Distributed Authoring and Versioning (WebDAV), an extension to the
+ HTTP-protocol, allows authoring of resources on a remote
+ web server. davfs2 provides the ability to access such resources like
+ a typical filesystem, allowing for use by standard applications with no
+ built-in support for WebDAV.
+ .
+ davfs2 is designed to fully integrate into the filesystem semantics of
+ Unix-like systems (mount, umount, et c.). davfs2 makes
+ mounting by unprivileged users as easy and secure as possible.
+ .
+ davfs2 does extensive caching to make the file system responsive,
+ to avoid unnecessary network traffic and to prevent data loss, and to cope
+ for slow or unreliable connections.
+ .
+ davfs2 will work with most WebDAV servers needing little or no configuration.

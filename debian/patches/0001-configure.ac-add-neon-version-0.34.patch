@@ -1,0 +1,19 @@
+From: Aymeric Agon-Rambosson <aymeric.agon@yandex.com>
+Date: Fri, 13 Dec 2024 16:48:29 +0100
+Subject: configure.ac: add neon version 0.34
+Forwarded: https://github.com/alisarctl/davfs2/pull/9
+---
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- a/configure.ac
++++ b/configure.ac
+@@ -37,7 +37,7 @@ AC_PROG_LN_S
+ # Checks for libraries.
+ AM_GNU_GETTEXT_VERSION(0.19.8)
+ AM_GNU_GETTEXT([external])
+-NE_REQUIRE_VERSIONS([0], [27 28 29 30 31 32 33])
++NE_REQUIRE_VERSIONS([0], [27 28 29 30 31 32 33 34])
+ DAV_CHECK_NEON
+ 
+ # Checks for header files.

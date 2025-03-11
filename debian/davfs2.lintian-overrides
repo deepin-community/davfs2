@@ -1,0 +1,4 @@
+davfs2: non-standard-dir-perm 0775 != 0755 [var/cache/davfs2/]
+davfs2: non-standard-file-perm 0600 != 0644 [etc/davfs2/secrets]
+davfs2: non-standard-dir-perm 0700 != 0755 [etc/davfs2/certs/private/]
+davfs2: unused-debconf-template

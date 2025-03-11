@@ -1,0 +1,61 @@
+# These templates have been reviewed by the debian-l10n-english
+# team
+
+Template: davfs2/suid_file
+Type: boolean
+Default: false
+_Description: Should unprivileged users be allowed to mount WebDAV resources?
+ The file /sbin/mount.davfs must have the SUID bit set if you want to allow
+ unprivileged (non-root) users to mount WebDAV resources.
+ .
+ If you do not choose this option, only root will be allowed to mount WebDAV
+ resources. This can later be changed by running 'dpkg-reconfigure davfs2'.
+
+Template: davfs2/user_name
+Type: string
+Default: davfs2
+_Description: User running the mount.davfs daemon:
+ Once the davfs resource has been mounted, the daemon will drop the
+ root privileges and will run with an unprivileged user ID.
+ .
+ Please choose which login name should be used by the daemon.
+
+Template: davfs2/group_name
+Type: string
+Default: davfs2
+_Description: Group for users who will be allowed to mount WebDAV resources:
+ Mounting WebDAV resources creates a file in
+ /var/run/mount.davfs. This directory will be owned by the group
+ specified here.
+
+Template: davfs2/new_user
+Type: boolean
+Default: true
+_Description: Do you want to create a new user?
+ The "${user_name}" user does not exist on the system and will be
+ created if you choose this option.
+
+Template: davfs2/new_group
+Type: boolean
+Default: true
+_Description: Do you want to create a new group?
+ The "${group_name}" group does not exist on the system and will be
+ created if you choose this option.
+
+Template: davfs2/non_root_users_confimed
+Type: note
+#flag:translate!:3,5
+_Description: Unprivileged users allowed to mount WebDAV resources
+ The "${group_name}" group and the "${user_name}" user will be used by
+ davfs2. All users who should be granted the right to mount WebDAV
+ resources should be added to the group "${group_name}" using the
+ following command:
+ .
+ adduser <username> ${group_name}
+ .
+ The following should also be added to /etc/fstab:
+ .
+ https://webdav.example.org/path  /mnt  davfs  rw,user,noauto  0  0
+ .
+ Additional options are available. Please read the mount.davfs man page
+ for more information.
