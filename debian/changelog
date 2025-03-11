@@ -1,5 +1,511 @@
-template-repository (1.0-1) unstable; urgency=medium
+davfs2 (1.7.1-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream release.
+  * Adopt the package (Closes: #1008001).
+  * Remove patch d/p/0001-configure.ac-add-neon-version-0.33.patch :
+    applied upstream.
+  * Add patch d/p/0001-configure.ac-add-neon-version-0.34.patch to allow
+    build with neon 0.34.
+  * Add patch d/p/do-not-install-INSTALL-COPYING.patch to prevent
+    irrelevant upstream documentation files from being installed.
+  * Converting d/po/it.po to utf-8 encoding.
+  * Update standards version to 4.7.0, no changes needed.
+  * Update d/u/metadata to follow new upstream.
+  * Update upstream contact, source, copyright years and licences in
+    d/copyright.
+  * Update Homepage in d/control to new upstream.
+  * Update d/watch to version 4 and new upstream.
+  * Update d/davfs2.docs to match README -> README.md name change.
+  * Correct d/lintian-overrides :
+    - specify etc/davfs2/secrets line correctly (brackets at end of line).
+    - remove var/run/mount.davfs line : directory does not exist at end of
+      build.
+    - Add override for unused-debconf-template.
+  * d/rules:
+    - Correct exceptions to dh_fixperms.
+    - Add binary hardening rules.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Aymeric Agon-Rambosson <aymeric.agon@yandex.com>  Sat, 14 Dec 2024 02:54:47 +0100
+
+davfs2 (1.7.0-1) unstable; urgency=medium
+
+  * QA upload.
+  * New upstream version 1.7.0
+  * Fix build with neon 0.33 (Closes: #1064728)
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Tue, 02 Apr 2024 23:03:15 +0200
+
+davfs2 (1.6.1-3) unstable; urgency=medium
+
+  * QA upload.
+  * Stop installing and remove compatibility symlinks in /sbin
+  * Actually not install empty /sbin directory (Closes: #1060731)
+  * d/rules: Switch to debhelper sequencer
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Sun, 14 Jan 2024 13:34:25 +0100
+
+davfs2 (1.6.1-2) unstable; urgency=medium
+
+  * QA upload.
+
+  [ Luciano Bello ]
+  * orphaning
+
+  [ Debian Janitor ]
+  * Update lintian override info to new format on line 1, 2, 4.
+  * Trim trailing whitespace.
+  * Use secure URI in Homepage field.
+  * Use set -e rather than passing -e on the shebang-line.
+  * Remove uploaders from orphaned package.
+  * Bump debhelper from old 12 to 13.
+  * Set upstream metadata fields: Bug-Submit (from ./configure).
+  * Update standards version to 4.6.1, no changes needed.
+
+  [ Chris Hofstaedtler ]
+  * Stop installing empty /sbin directory (Closes: #1060731)
+  * postrm: fix lintian brushed shebang
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Sat, 13 Jan 2024 15:12:09 +0100
+
+davfs2 (1.6.1-1) unstable; urgency=medium
+
+  * New upstream version.
+    - Fixed FTBFS with neon missing. (Closes: #997319)
+    - Some minor bugfixes.
+
+ -- Hsieh-Tseng Shen <woodrow.shen@gmail.com>  Fri, 18 Feb 2022 00:17:32 +0800
+
+davfs2 (1.6.0-1) unstable; urgency=medium
+
+  * New upstream version.
+    - Fixed FTBFS with gcc-10. (Closes: #957122)
+    - Drop coda module. But the fuse kernel file system is better suited anyway.
+    - The neon library from version 0.31 on has a workaround for SharePoint's href-bug.
+  * d/control: update debhelper-compat to 12 and remove d/compat.
+  * d/control: add Rules-Requires-Root: no.
+  * d/control: add Uploaders to be co-maintainer.
+  * d/copyright: update to follow DEP5 format.
+  * Add default gbp.conf.
+  * Remove the patch for adding neon library version.
+  * Remove the patch for doc-data.
+
+ -- Hsieh-Tseng Shen <woodrow.shen@gmail.com>  Sat, 08 Aug 2020 14:29:09 +0800
+
+davfs2 (1.5.6-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream version.
+  * Standards-Version: 4.5.0
+  * Fix incompatible neon library version by adding 31 to configure.ac.
+  * Fix a lintian warning of debian-watch-uses-insecure-uri.
+
+ -- Hsieh-Tseng Shen <woodrow.shen@gmail.com>  Thu, 18 Jun 2020 13:58:12 +0800
+
+davfs2 (1.5.5-1) unstable; urgency=medium
+
+  [ Luciano Bello ]
+  * New upstream version
+    - debian/patches/fix-cookie-parsing.patch removed, since included
+      in upstream.
+
+  [ Ondřej Nový ]
+  * d/changelog: Remove trailing whitespaces
+  * d/control: Remove trailing whitespaces
+  * d/rules: Remove trailing whitespaces
+  * d/control: Fix wrong Vcs-*
+
+ -- Luciano Bello <luciano@debian.org>  Sat, 23 Feb 2019 22:45:03 -0500
+
+davfs2 (1.5.4-4) unstable; urgency=medium
+
+  * Priority extra is replaced by priority optional.
+  * Standards-Version: 4.1.4
+  * Follow Debian Policy (10.9.1) about dpkg-statoverride use in postinst.
+
+ -- Luciano Bello <luciano@debian.org>  Wed, 30 May 2018 06:56:06 -0400
+
+davfs2 (1.5.4-3) unstable; urgency=medium
+
+  * fix-cookie-parsing.patch: Fixes cookie parsing. Closes: #834615.
+  * Moving the code to salsa.
+  * Debhelper 7 -> 11.
+    - Uninstall purge removes everything, as it should. Closes: #836201.
+
+ -- Luciano Bello <luciano@debian.org>  Thu, 17 May 2018 23:46:20 -0400
+
+davfs2 (1.5.4-2) unstable; urgency=medium
+
+  * New Standards-Version: 3.9.8
+  * Spelling error in README.Debian fixed
+  * The NMUs 1.5.2-1.2 and 1.5.2-1.1 by Marco d'Itri <md@linux.it> were
+    ignored accidentally in 1.5.4-1 and now they are included (Thanks
+    Marco, and sorry for the sloppiness). Here, a summary of his changelog:
+    - Non-maintainer upload.
+    - Make sure to not install the /sbin/*mount.davfs symlinks. Closes: #767923.
+    - Create in postinst the /sbin/*mount.davfs compatibility symlinks.
+      This is needed to support merged /usr systems.
+
+ -- Luciano Bello <luciano@debian.org>  Fri, 22 Apr 2016 13:19:02 +0200
+
+davfs2 (1.5.4-1) unstable; urgency=medium
+
+  * New Standards-Version: 3.9.7
+  * New Upstream version: Crash with -fstack-protector-strong fixed.
+    Closes: #812456.
+  * Entries Vcs-Git and Vcs-browser added in the control file.
+
+ -- Luciano Bello <luciano@debian.org>  Wed, 20 Apr 2016 14:16:41 +0200
+
+davfs2 (1.5.1-1) unstable; urgency=medium
+
+  * New Standards-Version: 3.9.5. This time for real.
+  * New upstream version.
+  * Switch back to libneon linked with openssl. Closes: #668968.
+  * Debconf as high, so ask for suid at installation time. Closes:#655077.
+
+ -- Luciano Bello <luciano@debian.org>  Sat, 23 Aug 2014 17:07:41 +0200
+
+davfs2 (1.5.0-1) unstable; urgency=medium
+
+  * New Standards-Version: 3.9.5
+  * New upstream version: Closes: #716663, #662078
+    - Fixed security risk caused by insecure use of function system. Patch
+      CVE-2013-4362.patch removed.
+    - umount will now properly work with system where mtab is a symbolic
+      link to /proc/mounts. for this davfs2 uses the new /var/mount/utab
+      file.
+    - Symbolic links in fstab will no longer break davfs2.
+    - Fixed bugs with setting access bits and evaluating access permissions.
+    - Support Neon version 0.30. Patch neon-30.patch removed.
+    - Improved configuration for certificate validation with new options
+      trust_ca_cert and trust_server_cert.
+    - New option minimize_mem to reduce memory consumption by davfs2.
+    - Allow mount option comment= .
+    - New mount option grpid.
+    - Improved cookie support allows for more than one cookie.
+    - Honor configure parameter --manfile.
+    - Fixed DESTDIR bug.
+    - Support temporary redirects for downloading of files (experimental new
+      feature).
+    - Support compression for downloading (experimental new feature).
+  * Wrong mail address fixed, thanks to duck.
+  * dh-autoreconf included. Closes: #727354
+
+ -- Luciano Bello <luciano@debian.org>  Thu, 29 May 2014 13:54:02 +0200
+
+davfs2 (1.4.7-3) unstable; urgency=high
+
+  * Fix CVE-2013-4362: Unsecure use of system(). Closes: #723034
+  * Compatibility with neon library version 0.30 included. Closes: #720811
+  * New Standards-Version: 3.9.4
+
+ -- Luciano Bello <luciano@debian.org>  Sun, 22 Sep 2013 14:24:20 +0200
+
+davfs2 (1.4.7-2) unstable; urgency=medium
+
+  * The it translation encoding was wrong (closes: #682571)
+
+ -- Luciano Bello <luciano@debian.org>  Thu, 26 Jul 2012 14:10:03 +0200
+
+davfs2 (1.4.7-1) unstable; urgency=medium
+
+  * DebConf12-Managua release!
+  * New upstream version:
+    - ignore_home option Closes: #620295,#620163
+  * Switch to dpkg-source 3.0 (quilt) format
+  * New Standards-Version: 3.9.3
+  * New and better translations:
+    - Some typos fixed in English and German Closes: #660866
+    - Italian. Closes: #662122
+  * Use dh_autotools-dev_* helper tools for handling config.{guess,sub} in
+    debian/rules, make build dependency on autotools-dev versioned.
+  * Deletes the user/group when is remove with purge. Closes: #597711
+  * 'Mount a FS automatically on system startup' section in README.Debian.
+    Closes: #632049
+  * Patches included by upstream (e.i. they are not need anymore):
+    - trailing-slash.patch
+
+ -- Luciano Bello <luciano@debian.org>  Fri, 20 Jul 2012 13:01:39 +0200
+
+davfs2 (1.4.6-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix pending l10n issues. Debconf translations:
+    - Brazilian Portuguese (Flamarion Jorge).  Closes: #610402
+    - Danish (Joe Hansen).  Closes: #633378
+
+ -- Christian Perrier <bubulle@debian.org>  Wed, 28 Dec 2011 08:35:54 +0100
+
+davfs2 (1.4.6-1) unstable; urgency=low
+
+  * New upstream version 1.4.6.
+  * Ignore the trailing slash from the mount point in /etc/fstab (closes:
+    #580227).
+  * New Standards-Version: 3.8.4.
+
+ -- Luciano Bello <luciano@debian.org>  Sun, 09 May 2010 02:20:30 -0300
+
+davfs2 (1.4.5-1) unstable; urgency=low
+
+  * New upstream version 1.4.5.
+    - write a log entry in case of an error that is probably caused by a
+    broken LOCK implementation on the server side.(closes: #551782).
+
+ -- Luciano Bello <luciano@debian.org>  Sun, 15 Nov 2009 22:42:27 -0300
+
+davfs2 (1.4.3-1) unstable; urgency=low
+
+  * New upstream version 1.4.3.
+    - which supports Neon 0.29 (closes: #549734).
+  * Few Debian-specific details:
+    - Homepage in the control file.
+    - Watch file.
+    - Japanese translation, really this time (closes: #538227).
+
+ -- Luciano Bello <luciano@debian.org>  Tue, 20 Oct 2009 16:21:53 -0300
+
+davfs2 (1.4.1-1) unstable; urgency=low
+
+  * New upstream version 1.4.1 (closes: #533057).
+  * Upstream location updated in copyright (closes: #533056).
+  * Debhelper compatibility version updated to 7.
+  * Standards-Version updated to 3.8.1.
+  * dh_clean -k was changed for dh_prep.
+  * /var/run/mount.davfs/ is not created during the instalation.
+  * New/improved debconf translations available:
+    - Spanish translation (closes: #526721).
+    - Japanese translation (closes: #528175).
+  * libneon27 had been switched for libneon27-gnutls (closes: #533058).
+
+ -- Luciano Bello <luciano@debian.org>  Mon, 15 Jun 2009 18:53:30 -0300
+
+davfs2 (1.3.3-3) unstable; urgency=high
+
+  * Double free fixed. RC bug (closes: #512625).
+
+ -- Luciano Bello <luciano@debian.org>  Wed, 28 Jan 2009 13:43:32 -0200
+
+davfs2 (1.3.3-2) unstable; urgency=high
+
+  * Last-Modified-Date miscalculation fixed (closes: #496688).
+
+ -- Luciano Bello <luciano@debian.org>  Tue, 26 Aug 2008 15:58:18 -0300
+
+davfs2 (1.3.3-1) unstable; urgency=low
+
+  * New upstream version 1.3.3
+
+ -- Luciano Bello <luciano@debian.org>  Sat, 12 Jul 2008 14:49:52 -0300
+
+davfs2 (1.3.2-1) unstable; urgency=low
+
+  * The 'Return of Upstream Fix-mania' release
+  * New upstream version 1.3.2
+  * Dependencies sanitased, again.
+  * Override.lintian sanitased.
+  * Policy 3.8.0 updated.
+  * Maintainer scripts improved.
+
+ -- Luciano Bello <luciano@debian.org>  Sat, 12 Jul 2008 14:11:33 -0300
+
+davfs2 (1.3.0cvs20080412-1) unstable; urgency=low
+
+  * The 'Upstream Fix-mania' release.
+  * Package's description fixed.
+  * Dependencies sanitased.
+  * /var/run/davfs2 is not created in instalation time.
+  * config/postinst rewritten by upstream.
+  * Sterile documentation excluded.
+  * Option --with-neon removed from rules. It's included by default.
+  * /etc/davfs2/certs/private is NOT world readable.
+  * Compatibility with neon library version 0.28.1 included (closes: #473933).
+
+ -- Luciano Bello <luciano@debian.org>  Thu, 10 Apr 2008 18:18:56 -0300
+
+davfs2 (1.3.0-1) unstable; urgency=low
+
+  * New upstream version 1.3.0 (closes: #439396, #464214, #460231).
+  * New/improved debconf translations available:
+    - German translation (closes: #430060).
+    - French translation (closes: #430500).
+    - Dutch translation (closes: #463447).
+    - Finnish translation (closes: #464065).
+  * Typo in the debconf template fixed (closes: #448379).
+
+ -- Luciano Bello <luciano@debian.org>  Mon, 18 Feb 2008 20:51:47 -0200
+
+davfs2 (1.2.1-3) unstable; urgency=low
+
+  * DebConf7 release.
+  * Use "distclean" instead of "clean" (closes: #424174). Thanks to Felipe
+    <faw@debian.org>.
+  * Better English in debconf templates and control file (closes: #426981)
+  * New/improved debconf translations available:
+    - New Vietnamese translation (closes: #427734).
+    - Improved German translation (closes: #429859).
+    - Improved Spanish translation.
+    - New Galician translation (closes: #427621).
+    - New Portuguese translation (closes: #427688).
+    - New Swedish translation (closes: #427779).
+    - Improved Czech translation (closes: #427937).
+    - New Tamil translation (closes: #428121).
+    - New Russian translation (closes: #428856).
+
+ -- Luciano Bello <luciano@linux.org.ar>  Wed, 20 Jun 2007 16:22:49 -0300
+
+davfs2 (1.2.1-2) unstable; urgency=low
+
+  * Fixed the debconf postinst (closes: #422993).
+
+ -- Luciano Bello <luciano@linux.org.ar>  Sun, 13 May 2007 17:05:37 -0300
+
+davfs2 (1.2.1-1) unstable; urgency=low
+
+  *  New upstream version 1.2.1 (closes: #407195, #418489).
+     - Localized versions supported in manpages and messages.
+     - Needs a a system user 'davfs2' and a system group
+      'davfs2'. No longer group 'users'.
+     - Supports client/server certificates.
+     - Translate the encoding of file names.
+  * Configuration scripts improved.
+  * No more template is used (closes: #417559).
+  * Fixed interoperation problems with the gmx-server (closes: #393349,
+    #407195).
+  * Debconf templates in cs, de, es, fr, ja.po and nl.po. Not full translation
+    available in some cases (closes: #413221, #414153, #418898, #409235)
+
+ -- Luciano Bello <luciano@linux.org.ar>  Thu, 26 Apr 2007 00:31:08 -0300
+
+davfs2 (1.1.2-3) unstable; urgency=high
+
+  * Urgency high due RC bug fix.
+  * When using fuse file system, kernel version 7, davfs2 do not crash anymore
+    (closes: Bug#404747).
+
+ -- Luciano Bello <luciano@linux.org.ar>  Fri, 29 Dec 2006 14:52:33 -0300
+
+davfs2 (1.1.2-2) unstable; urgency=medium
+
+  * Acknowledge NMU (closes: Bug#394845, #396988).
+  * The copyright file links to GPL-2 insted of GPL because the license is
+    "GPLv2" and no "GPLv2 or any later version"
+
+ -- Luciano Bello <luciano@linux.org.ar>  Sun,  5 Nov 2006 15:03:00 -0300
+
+davfs2 (1.1.2-1.1) unstable; urgency=medium
+
+  * NMU.
+  * Defined O_FSYNC and O_ASYNC in src/cache.h (closes: #394845).
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Sat, 04 Nov 2006 12:17:23 +1100
+
+davfs2 (1.1.2-1) unstable; urgency=low
+
+  * New upstream version 1.1.2.
+    - Fuse kernel file system support besides coda.
+    - Support for large files (> 2 GiByte) added.
+    - Sets a timeout for locks on the server (if the server supports it).
+    - The rules for encoding, escaping or quoting URLs with spaces have been
+    changed.
+    - Configuration files allows to set configuration options differently for
+    different mount points.
+    - MOVE method fixed (closes:#367820).
+    - New options: kernel_fs, buf_size, backup_dir, get_wait, lock_timeout and
+    lock_owner. The command line and fstab options askauth, nolocks and useproxy
+    are deprecated (but still possible).
+  * Debconf checks if the sysadmin's changes the files permissions with
+    dpkg-statoverride before chmod it.
+  * Doesn't put documentation in /usr/share/davfs2 anymore (closes:#388404).
+  * Upstream's README have not aplicable or releavent information, so not included
+    any more (closes:#388405).
+  * Debconf translation to Czech (closes:#369097) and French (closes:#372293)
+    included.
+  * Update build dependency to newly supported libneon26-dev.
+
+ -- Luciano Bello <luciano@linux.org.ar>  Sat, 07 Oct 2006 20:43:06 -0300
+
+davfs2 (1.0.2-1) unstable; urgency=low
+
+  * The "Almost rewriten at the 100%" release.
+  * New upstream version 1.0.2.
+     - The binary doesn't depend on the kernel version anymore.
+     - Mounted file systems may now be shared among local users.
+     - Many new configuration options.
+  * Non-root use configurable with debconf. (Thanks to Otavio Salvador
+  <otavio@debian.org> for debugging) (closes: #358933)
+
+ -- Luciano Bello <luciano@linux.org.ar>  Sat, 13 May 2006 18:44:26 -0300
+
+davfs2 (0.2.8-1) unstable; urgency=low
+
+  * New upstream version 0.2.8.
+    - The directory in /var/run can be flush in each reboot (closes: Bug#348796).
+    - Support neon 0.24 and 0.25
+  * Allows to give usernames/groupnames instead of uid/gid (closes: Bug#310976).
+
+ -- Luciano Bello <luciano@linux.org.ar>  Thu, 09 Mar 2006 00:48:11 -0300
+
+davfs2 (0.2.7-1) unstable; urgency=low
+
+  * New upstream version 0.2.7.
+    - Allow mounting even if the server is momentarily unreachable with the
+      option 'mountanyway'.
+    - Better interoperation with MS IIS.
+    - Save open files and release locks when closing
+    - Added support to handle urls with and without trailing slash
+  * Removed typecast from return value of a funtion, solving the implicitly
+    converted pointer issues (closes: Bug#327279).
+
+ -- Luciano Bello <luciano@linux.org.ar>  Wed, 04 Jan 2006 00:06:56 -0300
+
+davfs2 (0.2.6-1) unstable; urgency=high
+  * New upstream version 0.2.6.
+    - Problems building in few architectures (especialy 64 bits architectures)
+      fixed - RC bug (closes: Bug#327305).
+    - Trailing '/' in directories fixed (closes: Bug#324968).
+    - Checking group membership of process instead of group-file (may differ if
+      group-file is changed while the user is logged in).
+    - Manual page problem fixed (closes: Bug#328099).
+  * Implicitly converted pointer fixed, thanks Dann Frazier (closes: Bug#327279).
+  * Few adaptations (most of the paths file) in the manual page to Debian
+    users and other corrections (closes: Bug#328677).
+  * Fixed permissions on /var/run/mount.davfs to permit non-root users to use
+    it (closes: Bug#328679).
+  * Fixed pointer-pointer-error included in CVS.
+
+ -- Luciano Bello <luciano@linux.org.ar>  Tue, 04 Oct 2005 15:02:01 -0300
+
+davfs2 (0.2.4-1) unstable; urgency=high
+
+  * New upstream version 0.2.4.
+    - Solve CAN-2005-1774 .Permit users to mount their owns resources,
+      considering the right permissions (closes: Bug#310757).
+    - Configuration is allocated in a config file.
+    - Support for SSL certificates.
+  * The source doesn't unnecessary build libraries any more.
+  * Support for URLs with spaces are included now (closes: Bug#311286).
+  * Support for kernels 2.4 and 2.6 through a script wrapper
+    (closes: Bug#303533).
+
+ -- Luciano Bello <luciano@linux.org.ar>  Mon,  1 Aug 2005 21:41:35 -0300
+
+davfs2 (0.2.3-2) unstable; urgency=low
+
+  * Create /sbin/mount.davfs symlink, thanks Hervé Eychenne (closes: Bug#304719)
+
+ -- Luciano Bello <luciano@linux.org.ar>  Tue, 10 May 2005 00:48:12 -0300
+
+davfs2 (0.2.3-1.1) unstable; urgency=high
+
+  * Non-maintainer upload.
+  * Urgency high due RC bug fix.
+  * debian/rules: clean target: remove config.status, use clean instead of
+    distclean, thanks Guido Guenther (closes: Bug#307085).
+
+ -- Luk Claes <luk@debian.org>  Wed,  4 May 2005 21:59:08 +0200
+
+davfs2 (0.2.3-1) unstable; urgency=low
+
+  * Initial release (closes: Bug#127502).
+
+ -- Luciano Bello <luciano@linux.org.ar>  Wed, 02 Mar 2005 11:37:15 -0300

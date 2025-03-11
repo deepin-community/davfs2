@@ -1,4 +1,17 @@
 #!/usr/bin/make -f
+#export DH_VERBOSE=1
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 %:
 	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		ssbindir="\$${prefix}/sbin"
+
+override_dh_fixperms:
+	chmod 775 debian/davfs2/var/cache/davfs2
+	dh_fixperms -X etc/davfs2/secrets \
+		    -X etc/davfs2/certs/private \
+		    -X var/cache/davfs2

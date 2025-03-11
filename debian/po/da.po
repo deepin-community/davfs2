@@ -1,0 +1,150 @@
+# Danish translation davfs2.
+# Copyright (C) 2011 davfs2 & nedenstående oversættere.
+# This file is distributed under the same license as the davfs2 package.
+# Joe Hansen (joedalton2@yahoo.dk), 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: davfs2\n"
+"Report-Msgid-Bugs-To: luciano@debian.org\n"
+"POT-Creation-Date: 2008-04-11 20:26-0300\n"
+"PO-Revision-Date: 2011-07-09 12:42+0000\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <debian-l10n-danish@lists.debian.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid "Should unprivileged users be allowed to mount WebDAV resources?"
+msgstr ""
+"Skal upriviligerede brugere have tilladelse til at montere WebDAV-ressourcer?"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid ""
+"The file /sbin/mount.davfs must have the SUID bit set if you want to allow "
+"unprivileged (non-root) users to mount WebDAV resources."
+msgstr ""
+"Filen /sbin/mount.davfs skal have SUID bit-sættet, hvis du ønsker at tillade "
+"upriviligerede (ikke-root) brugere at montere WebDAV-ressourcer."
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid ""
+"If you do not choose this option, only root will be allowed to mount WebDAV "
+"resources. This can later be changed by running 'dpkg-reconfigure davfs2'."
+msgstr ""
+"Hvis du ikke vælger denne indstilling, vil kun administrator (root) have "
+"tilladelse til at montere WebDAV-ressourcer. Dette kan senere ændres ved at "
+"køre »dpkg-reconfigure davfs2«."
+
+#. Type: string
+#. Description
+#: ../templates:3001
+msgid "User running the mount.davfs daemon:"
+msgstr "Bruger der kører dæmonen mount.davfs:"
+
+#. Type: string
+#. Description
+#: ../templates:3001
+msgid ""
+"Once the davfs resource has been mounted, the daemon will drop the root "
+"privileges and will run with an unprivileged user ID."
+msgstr ""
+"Når først davfs-ressourcen er blevet monteret, vil dæmonen droppe "
+"administratorprivilegier og vil køre med en upriviligeret bruger-id."
+
+#. Type: string
+#. Description
+#: ../templates:3001
+msgid "Please choose which login name should be used by the daemon."
+msgstr "Vælg venligst hvilket logindnavn der skal bruges af dæmonen."
+
+#. Type: string
+#. Description
+#: ../templates:4001
+msgid "Group for users who will be allowed to mount WebDAV resources:"
+msgstr ""
+"Gruppe af brugere som vil have tilladelse til at montere WebDAV-ressourcer:"
+
+#. Type: string
+#. Description
+#: ../templates:4001
+msgid ""
+"Mounting WebDAV resources creates a file in /var/run/mount.davfs. This "
+"directory will be owned by the group specified here."
+msgstr ""
+"Montering af WebDAV-ressourcer opretter en fil i /var/run/mount.davfs. Denne "
+"mappe vil blive ejet af gruppen angivet her."
+
+#. Type: boolean
+#. Description
+#: ../templates:5001
+msgid "Do you want to create a new user?"
+msgstr "Ønsker du at oprette en ny bruger?"
+
+#. Type: boolean
+#. Description
+#: ../templates:5001
+msgid ""
+"The \"${user_name}\" user does not exist on the system and will be created "
+"if you choose this option."
+msgstr ""
+"Brugeren »${user_name}« findes ikke på systemet og vil blive oprettet, hvis "
+"du vælger denne indstilling."
+
+#. Type: boolean
+#. Description
+#: ../templates:6001
+msgid "Do you want to create a new group?"
+msgstr "Ønsker du at oprette en ny gruppe?"
+
+#. Type: boolean
+#. Description
+#: ../templates:6001
+msgid ""
+"The \"${group_name}\" group does not exist on the system and will be created "
+"if you choose this option."
+msgstr ""
+"Gruppen »${group_name}« findes ikke på systemet og vil blive oprettet, hvis "
+"du vælger denne indstilling."
+
+#. Type: note
+#. Description
+#: ../templates:7001
+msgid "Unprivileged users allowed to mount WebDAV resources"
+msgstr "Upriviligerede brugere med tilladelse til at montere WebDAV-ressourcer"
+
+#. Type: note
+#. Description
+#: ../templates:7001
+msgid ""
+"The \"${group_name}\" group and the \"${user_name}\" user will be used by "
+"davfs2. All users who should be granted the right to mount WebDAV resources "
+"should be added to the group \"${group_name}\" using the following command:"
+msgstr ""
+"Gruppen »${group_name}« og brugeren »${user_name}« vil blive brugt af "
+"davfs2. Alle brugere, som skal have ret til at montere WebDAV-ressourcer, "
+"skal tilføjes til gruppen »${group_name}« med den følgende kommando:"
+
+#. Type: note
+#. Description
+#: ../templates:7001
+msgid "The following should also be added to /etc/fstab:"
+msgstr "Det følgende bør også tilføjes til /etc/fstab:"
+
+#. Type: note
+#. Description
+#: ../templates:7001
+msgid ""
+"Additional options are available. Please read the mount.davfs man page for "
+"more information."
+msgstr ""
+"Yderligere indstillinger er tilgængelige. Læs venligst manualsiden for mount."
+"davfs for yderligere information."

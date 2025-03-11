@@ -1,0 +1,12 @@
+From: Aymeric Agon-Rambosson <aymeric.agon@yandex.com>
+Date: Fri, 13 Dec 2024 17:27:25 +0100
+Subject: Makefile.am : remove documents (added by dh_installdocs).
+Forwarded: not applicable
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -23,5 +23,3 @@ EXTRA_DIST = bootstrap BUGS FAQ README.t
+              config/COPYING.davfs2 config/INSTALL.davfs2
+ SUBDIRS = po etc man src
+ ACLOCAL_AMFLAGS = -I config
+-doc_DATA = AUTHORS BUGS ChangeLog COPYING FAQ INSTALL NEWS README.md \
+-           README.translators THANKS TODO
